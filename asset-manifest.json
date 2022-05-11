@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-highlighter-app/static/css/main.90d150e3.css",
+    "main.js": "/react-highlighter-app/static/js/main.8548b69e.js",
+    "index.html": "/react-highlighter-app/index.html",
+    "main.90d150e3.css.map": "/react-highlighter-app/static/css/main.90d150e3.css.map",
+    "main.8548b69e.js.map": "/react-highlighter-app/static/js/main.8548b69e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90d150e3.css",
+    "static/js/main.8548b69e.js"
+  ]
+}
