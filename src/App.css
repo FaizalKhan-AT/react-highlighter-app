@@ -4,4 +4,80 @@
   --yellow: #fae191;
   --faded-white: #ebe9f3;
   --main-bg: #f6f6f6;
+  --selected-text: #454444;
+}
+body {
+  background: var(--main-bg) !important;
+}
+.btn {
+  box-shadow: none !important;
+}
+.nav {
+  background: var(--purple);
+  color: var(--white);
+}
+.annot-btn:hover {
+  color: var(--purple) !important;
+}
+.annot-btn.active {
+  background: var(--white);
+  color: var(--purple) !important;
+}
+.row {
+  --bs-gutter-x: 0.4rem !important;
+}
+
+.record-item {
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid #000;
+  border-bottom: none;
+  background: var(--faded-white);
+}
+.record-item:last-child {
+  border-bottom: 1px solid #000;
+}
+.record-item.active {
+  background: var(--white);
+}
+.highlight-container {
+  box-shadow: 0 0 19px rgba(0, 0, 0, 0.2);
+  height: 80vh;
+  border: none;
+  outline: none;
+}
+.delete-btn {
+  color: var(--purple);
+  cursor: pointer;
+}
+.annot-container {
+  border: 1px solid var(--purple);
+  border-left: none;
+  border-top: none;
+}
+.highlight-container,
+.annot-container {
+  background: var(--white);
+  overflow-y: scroll;
+}
+.record-container,
+.annot-container {
+  height: 70vh;
+}
+.highlight-container::selection,
+mark {
+  background-color: var(--yellow) !important;
+  color: var(--selected-text) !important;
+  font-weight: bolder;
+}
+mark sub {
+  color: var(--purple);
+  text-transform: uppercase;
+}
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--faded-white);
+  border-radius: 15px;
 }
