@@ -69,10 +69,31 @@ mark {
   background-color: var(--yellow) !important;
   color: var(--selected-text) !important;
   font-weight: bolder;
+  cursor: pointer;
 }
 mark sub {
   color: var(--purple);
   text-transform: uppercase;
+}
+
+.high-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -15px;
+  left: -7px;
+  color: var(--white);
+  background: var(--selected-text);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.wrapper-mark:hover .high-delete {
+  transform: scale(1);
 }
 ::-webkit-scrollbar {
   width: 0.3rem;

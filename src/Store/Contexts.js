@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 export const UpdateAnnotWindow = createContext(null);
 export const UpdateLocalStorage = createContext(null);
+
 function Contexts({ children }) {
   const [text, setText] = useState("");
   const [id, setId] = useState();
@@ -11,6 +12,24 @@ function Contexts({ children }) {
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    document.querySelectorAll(".high-delete").forEach((btn) => {
+      btn.addEventListener("click", handleDelete);
+    });
+    return () => {
+      document.querySelectorAll(".high-delete").forEach((btn) => {
+        btn.removeEventListener("click", handleDelete);
+      });
+    };
+  });
+
+  const handleDelete = (e) => {
+    let data = JSON.parse(localStorage.getItem("highlights"));
+    data = data.filter((el) => el.rId !== +e.target.dataset.id);
+    localStorage.setItem("highlights", JSON.stringify(data));
+    fetchData();
+  };
 
   const fetchData = () => {
     if (localStorage.getItem("highlights"))
@@ -26,11 +45,15 @@ function Contexts({ children }) {
     words.forEach((el) => {
       orginalText = orginalText.replace(
         el.text,
-        `<mark>${el.text}  <sub>${el.status}</sub></mark>`
+        `<span class="position-relative wrapper-mark">
+          <span class="position-absolute fs-5 fw-bold high-delete" data-id=${el.rId}>&times;</span>
+          <mark>${el.text} &nbsp;<sub>${el.status}</sub></mark>
+        </span>`
       );
     });
     setText(orginalText);
   };
+
   return (
     <UpdateAnnotWindow.Provider
       value={{
