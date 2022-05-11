@@ -1,6 +1,6 @@
 # Text Highlighter React App
 
-### You can use the live link to run this app [link]().
+### You can use the live link to run this app [link](https://faizalkhan-at.github.io/react-highlighter-app/).
 
 ## How to run on local setup
 
