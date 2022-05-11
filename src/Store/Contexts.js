@@ -19,6 +19,7 @@ function Contexts({ children }) {
   };
 
   const highLightWords = () => {
+    if (!localStorage.getItem("highlights")) return;
     let words = JSON.parse(localStorage.getItem("highlights"));
     words = words.filter((item) => item.id === id);
     let orginalText = orgText;
